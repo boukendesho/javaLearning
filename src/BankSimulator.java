@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bankSimulator {
+public class BankSimulator {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {

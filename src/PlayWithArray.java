@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class playWithArray {
+public class PlayWithArray {
     public static void main(String[] args) {
         // An Array with items
         String[] GPUBrands = {"NVIDIA", "AMD", "INTEL"};
