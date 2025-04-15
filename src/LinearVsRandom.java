@@ -5,7 +5,8 @@ import java.util.function.Supplier;
 
 public class LinearVsRandom {
     public static void main(String[] args) {
-        ArrayList<Integer> randomNumbers = genRandomNumbers(100);
+        int lengthOfList = 100;
+        ArrayList<Integer> randomNumbers = genRandomNumbers(lengthOfList);
         // int count = linearSearch(randomNumbers);
         // int count = randomSearch(randomNumbers);
         ArrayList<Integer> linearResults;
@@ -14,8 +15,8 @@ public class LinearVsRandom {
         linearResults = repeat(100, () -> linearSearch(randomNumbers));
         randomResults = repeat(100, () -> randomSearch(randomNumbers));
 
-        System.out.printf("線形探索%d回の平均値：%.2f\n", linearResults.size(), average(linearResults));
-        System.out.printf("ランダム探索%d回の平均値：%.2f\n", randomResults.size(), average(randomResults));
+        System.out.printf("長さ%dの配列、線形探索%d回の平均値：%.2f\n", lengthOfList, linearResults.size(), average(linearResults));
+        System.out.printf("長さ%dの配列、ランダム探索%d回の平均値：%.2f\n", lengthOfList, randomResults.size(), average(randomResults));
 
 
     }
