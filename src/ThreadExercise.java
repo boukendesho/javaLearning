@@ -1,10 +1,17 @@
-public class ThreadExercise implements Runnable {
-    public static void main(String[] args) {
-        System.out.println("This running in a thread");
-    }
+import java.util.Scanner;
 
-    @Override
-    public void run() {
-        System.out.println("This running in a thread");
+public class ThreadExercise {
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable(5);
+        Thread thread = new Thread(myRunnable);
+        thread.setDaemon(true);
+        thread.start();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Please input something(Tik tok in background): ");
+        String usrInput = scanner.nextLine();
+        System.out.println(usrInput);
+
+        scanner.close();
     }
 }
