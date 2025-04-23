@@ -6,9 +6,18 @@ public class TimerExercise {
 
         Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
+
+            int count = 5;
+
             @Override
             public void run() {
                 System.out.println("Hello from timer task!");
+
+                count--;
+                if (count <= 0) {
+                    timer.cancel();
+                    System.out.println("Timeout! Canceled.");
+                }
             }
         };
 
