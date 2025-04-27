@@ -2,21 +2,21 @@ public class LeapYearCal {
     public static void main(String[] args) {
         int year = 2100;
         if (cal1(year)) {
-            System.out.printf("cal1: %d is leap year\n", year);
+            System.out.printf("cal1: %d is a leap year\n", year);
         } else {
-            System.out.printf("cal1: %d is not leap year\n", year);
+            System.out.printf("cal1: %d is not a leap year\n", year);
         }
 
         if (cal2(year)) {
-            System.out.printf("cal2: %d is leap year\n", year);
+            System.out.printf("cal2: %d is a leap year\n", year);
         } else {
-            System.out.printf("cal2: %d is not leap year\n", year);
+            System.out.printf("cal2: %d is not a leap year\n", year);
         }
 
         if (cal3(year)) {
-            System.out.printf("cal3: %d is leap year\n", year);
+            System.out.printf("cal3: %d is a leap year\n", year);
         } else {
-            System.out.printf("cal3: %d is not leap year\n", year);
+            System.out.printf("cal3: %d is not a leap year\n", year);
         }
     }
 
@@ -26,11 +26,7 @@ public class LeapYearCal {
                 return true;
             }
 
-            if (year % 100 == 0) {
-                return false;
-            } else {
-                return true;
-            }
+            return year % 100 != 0;
         } else {
             return false;
         }
@@ -38,15 +34,9 @@ public class LeapYearCal {
 
     static boolean cal2(int year) {
         if (year % 100 == 0) {
-            if (year % 400 == 0) {
-                return true;
-            }
-            return false;
+            return year % 400 == 0;
         } else {
-            if (year % 4 == 0) {
-                return true;
-            }
-            return false;
+            return year % 4 == 0;
         }
     }
 
@@ -58,10 +48,7 @@ public class LeapYearCal {
                 return false;
             }
 
-            if (year % 4 == 0) {
-                return true;
-            }
-            return false;
+            return year % 4 == 0;
         }
     }
 }
